@@ -2133,6 +2133,7 @@
     <Content Include="homepage.aspx" />
     <Content Include="imgs\books.png" />
     <Content Include="imgs\home-bg.png" />
+    <Content Include="imgs\in-homepage-banner.png" />
     <Content Include="in-homepage-banner.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
