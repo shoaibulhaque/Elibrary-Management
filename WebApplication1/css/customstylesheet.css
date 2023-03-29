@@ -8,9 +8,23 @@
     }
 
 #footer1 {
-    background: #762b00;
+    background-color: #1a202c;
+    color: #2d3748;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #footer2 {
-    background: #531f00;
+    background-color: #1a202c;
+    color: #ffffff;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Minimalist font style */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
 }
