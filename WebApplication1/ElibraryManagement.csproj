@@ -2132,9 +2132,11 @@
     <Content Include="fontawesome\svgs\solid\z.svg" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\books.png" />
+    <Content Include="imgs\defaulters-list.png" />
     <Content Include="imgs\digital-inventory %282%29.png" />
     <Content Include="imgs\home-bg.png" />
     <Content Include="imgs\in-homepage-banner.png" />
+    <Content Include="imgs\search-online.png" />
     <Content Include="in-homepage-banner.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />

@@ -27,11 +27,32 @@
             <div class ="row">
 
                 <div class ="col-md-4">
+                    <center>
                     <img src="imgs/digital-inventory%20(2).png"  width= "150px" />
                     <h4>Digital Book Inventory</h4>
-                    <p>Our Digital Book Inventory feature allows you to keep track of all your books in one place, making it easy to manage and organize your collection.
+                    <p class ="text-justify" >Our Digital Book Inventory feature allows you to keep track of all your books in one place, making it easy to manage and organize your collection.
                     </p>
+                    </center>
                 </div>
+
+                <div class ="col-md-4">
+                    <center>
+                    <img src="imgs/search-online.png"  width= "150px" />
+                    <h4>Search Books</h4>
+                    <p class ="text-justify" >Looking for a specific book? Our search feature makes it easy to find what you need. 
+                    </p>
+                    </center>
+                </div>
+
+                <div class ="col-md-4">
+                    <center>
+                    <img src="imgs/defaulters-list.png"  width= "150px" />
+                    <h4>Defaulter List</h4>
+                    <p class ="text-justify" >Our Defaulter List feature provides a comprehensive list of individuals and organizations who have defaulted on payments or commitments.
+                    </p>
+                    </center>
+                </div>
+
             </div>
 
 
