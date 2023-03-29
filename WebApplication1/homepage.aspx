@@ -5,8 +5,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <section>
-        <img src="imgs/home-bg.jpg" />
+    <section style="height: 300px;">
+        <img src="imgs/home-bg.png" style="object-fit: cover; width: 100%; height: 100%;" />
     </section>
 
 </asp:Content>

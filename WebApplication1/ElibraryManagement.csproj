@@ -2132,7 +2132,7 @@
     <Content Include="fontawesome\svgs\solid\z.svg" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\books.png" />
-    <Content Include="imgs\home-bg.jpg" />
+    <Content Include="imgs\home-bg.png" />
     <Content Include="in-homepage-banner.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
