@@ -88,7 +88,7 @@
                                 </div>
 
                                 <div class ="form-group">
-                                    <input class="btn btn-info btn-block btn-lg btn-3d" id="Button2" type="button" value="Sign Up" />
+                                    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-lg btn-3d" id="Button2" type="button" value="Sign Up" /></a>
 
                                 </div>
 
@@ -108,6 +108,8 @@
         </div>
 
     </div>
+
+        </div>
 
 
 </asp:Content>
