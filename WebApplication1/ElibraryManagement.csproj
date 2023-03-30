@@ -2136,7 +2136,9 @@
     <Content Include="imgs\digital-inventory %282%29.png" />
     <Content Include="imgs\home-bg.png" />
     <Content Include="imgs\in-homepage-banner.png" />
+    <Content Include="imgs\library.png" />
     <Content Include="imgs\search-online.png" />
+    <Content Include="imgs\signup-pic.png" />
     <Content Include="in-homepage-banner.jpg" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
