@@ -42,17 +42,17 @@
 
                         <div class="row">
                             <div class="col">
-                                <label>Member ID</label>
-                                <div class ="form-group">
+                                
+                                </br><div class ="form-group">
                                     <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Member ID"></asp:TextBox>
 
                                 </div>
 
-                                 <label>Password</label>
+
                                 <div class ="form-group">
                                     <asp:TextBox CssClass ="form-control" ID="TextBox2" runat="server" placeholder ="password" TextMode="Password"></asp:TextBox>
 
-                                </div>
+                                </div></br>
 
                                 <style>
                                     .btn-3d {
@@ -80,17 +80,49 @@
   }
                                 </style>
 
+                                <style>
+                                    @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .btn-pulse {
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .btn-slide {
+    animation: slideInFromLeft 0.5s ease-out;
+  }
+
+                                </style>
 
                                  
                                 <div class ="form-group">
-                                    <asp:Button ID="Button1" class="btn btn-primary btn-block btn-3d rounded-lg " runat="server" Text="Login" />
+    <button class="btn btn-primary btn-block btn-3d rounded-lg hover:-translate-y-0.5 transition-all duration-200 btn-slide" type="button">Login</button>
+</div>
 
-                                </div>
+<div class ="form-group">
+    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Sign Up"/></a>
+</div>
 
-                                <div class ="form-group">
-                                    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d " id="Button2" type="button" value="Sign Up"/></a>
-
-                                </div>
 
                             </div>
 

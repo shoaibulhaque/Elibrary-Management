@@ -40,17 +40,17 @@
 
                         <div class="row">
                             <div class="col">
-                                <label>Email</label>
-                                <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Email"></asp:TextBox>
+                                
+                                </br><div class ="form-group">
+                                    <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Admin ID"></asp:TextBox>
 
                                 </div>
 
-                                 <label>Password</label>
+                                 
                                 <div class ="form-group">
                                     <asp:TextBox CssClass ="form-control" ID="TextBox2" runat="server" placeholder ="password" TextMode="Password"></asp:TextBox>
 
-                                </div>
+                                </div></br>
 
                                 <style>
                                     .btn-3d {
