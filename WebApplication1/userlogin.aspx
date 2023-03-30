@@ -10,7 +10,7 @@
 
             <div class ="col-md-6 mx-auto">
 
-                <div class="card shadow">
+                <div class="card rounded-lg">
 
 
                     <div class="card-body">
@@ -83,12 +83,12 @@
 
                                  
                                 <div class ="form-group">
-                                    <asp:Button ID="Button1" class="btn btn-primary btn-block btn-lg btn-3d" runat="server" Text="Login" />
+                                    <asp:Button ID="Button1" class="btn btn-primary btn-block btn-3d rounded-lg " runat="server" Text="Login" />
 
                                 </div>
 
                                 <div class ="form-group">
-                                    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-lg btn-3d" id="Button2" type="button" value="Sign Up" /></a>
+                                    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d " id="Button2" type="button" value="Sign Up"/></a>
 
                                 </div>
 
@@ -102,7 +102,7 @@
                     
 
             </div>
-                <a href="homepage.aspx"><< Back to Home</a></br></br>
+                <a href="homepage.aspx"><< Back to Home</a></br></br></br>
                 
 
         </div>

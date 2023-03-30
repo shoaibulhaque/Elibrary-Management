@@ -8,7 +8,7 @@
 
             <div class ="col-md-6 mx-auto">
 
-                <div class="card shadow">
+                <div class="card ">
 
 
                     <div class="card-body">
@@ -40,9 +40,9 @@
 
                         <div class="row">
                             <div class="col">
-                                <label>Admin ID</label>
+                                <label>Email</label>
                                 <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Member ID"></asp:TextBox>
+                                    <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Email"></asp:TextBox>
 
                                 </div>
 

@@ -15,7 +15,9 @@
 
     <%--custom css--%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
-    
+
+    <%--Tailwind css--%>
+    <link href="styles.css" rel="stylesheet" />
 
     <%--jquery--%>
     <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
