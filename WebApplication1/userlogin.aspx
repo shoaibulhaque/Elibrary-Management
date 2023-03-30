@@ -10,7 +10,7 @@
 
             <div class ="col-md-6 mx-auto">
 
-                <div class ="card">
+                <div class="card shadow">
 
 
                     <div class="card-body">
@@ -54,6 +54,44 @@
 
                                 </div>
 
+                                <style>
+                                    .btn-3d {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #395EAB;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2), 0 6px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  
+  .btn-3d:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+  }
+  
+  .btn-3d:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.2);
+  }
+                                </style>
+
+
+                                 
+                                <div class ="form-group">
+                                    <asp:Button ID="Button1" class="btn btn-primary btn-block btn-lg btn-3d" runat="server" Text="Login" />
+
+                                </div>
+
+                                <div class ="form-group">
+                                    <input class="btn btn-info btn-block btn-lg btn-3d" id="Button2" type="button" value="Sign Up" />
+
+                                </div>
+
                             </div>
 
                     </div>
@@ -61,7 +99,11 @@
 
                 </div>
 
+                    
+
             </div>
+                <a href="homepage.aspx"><< Back to Home</a></br></br>
+                
 
         </div>
 
