@@ -2142,6 +2142,7 @@
     <Content Include="imgs\library.png" />
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\signup-pic.png" />
+    <Content Include="imgs\user-register.png" />
     <Content Include="in-homepage-banner.jpg" />
     <Content Include="userlogin.aspx" />
     <Content Include="usersignup.aspx" />
