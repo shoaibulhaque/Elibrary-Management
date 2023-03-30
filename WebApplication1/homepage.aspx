@@ -73,7 +73,7 @@
                 <div class ="col-12">
                     <center>
                     <h2>Our Process</h2>
-                    <p>A simple 3 step process</p>
+                    <p>Streamlining your library experience through our proven process.</p>
                     </center>
                 </div>
             </div>
