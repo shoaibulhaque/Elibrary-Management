@@ -1,15 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="usersignup.aspx.cs" Inherits="WebApplication1.usersignup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="WebApplication1.userprofile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-        <div class ="container">
+            <div class ="container-fluid">
         <div class="row">
 
-            <div class ="col-md-8 mx-auto">
+            <div class ="col-md-5">
 
-                <div class="card rounded-lg">
+                <div class="card shadow-sm rounded">
 
 
                     <div class="card-body">
@@ -17,7 +18,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <img src="imgs/user-register.png" width="100px" />
+                                    <img src="imgs/general-user.png" width="100px" />
                                 </center>
                             </div>
 
@@ -26,7 +27,11 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4>User SignUp</h4>
+                                    <h4>Your Profile</h4>
+                                    <span>Account Status - </span>
+                                    <asp:Label class="badge badge-pill badge-info" ID="Label1" runat="server" Text="Your Status"></asp:Label>
+
+
                                 </center>
                             </div>
 
@@ -144,21 +149,31 @@
 
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label>User ID</label>
                                 <div class ="form-group">
-                                    <asp:TextBox class ="form-control" ID="TextBox8" runat="server" placeholder ="User ID" ></asp:TextBox>
+                                    <asp:TextBox class ="form-control" ID="TextBox8" runat="server" placeholder ="User ID" ReadOnly="true" ></asp:TextBox>
 
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label>Password</label>
                                 <div class ="form-group">
-                                    <asp:TextBox class ="form-control" ID="TextBox9" runat="server" placeholder ="Password" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox class ="form-control" ID="TextBox9" runat="server" placeholder ="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
 
                                 </div>
                             </div>
+
+                            <div class="col-md-4">
+                                <label>New Password</label>
+                                <div class ="form-group">
+                                    <asp:TextBox class ="form-control" ID="TextBox10" runat="server" placeholder ="New Password" TextMode="Password" ></asp:TextBox>
+
+                                </div>
+                            </div>
+
+
 
 
                         </div>
@@ -247,15 +262,14 @@
                     
 
             </div>
-                <a href="homepage.aspx"><< Back to Home</a></br></br></br>
+                <a href="homepage.aspx"><< Back to Home</a>
                 
 
         </div>
 
+
     </div>
 
         </div>
-
-
 
 </asp:Content>
