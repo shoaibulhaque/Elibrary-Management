@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Book Stack</title>
+    <style>
+        body {
+          
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            font-family: Arial, sans-serif;
+  
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        
+
+        .card {
+            background-color: white;
+            width: 30rem;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 10rem;
+            height: 10rem;
+            background-image: url('imgs/library.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            color: #0094ff;
+            font-size: 3rem;
+            margin-top: 2rem;
+        
+        }
+
+        p {
+            font-size: 1.2rem;
+            font-family: Chiller
+            color: black;
+            margin-top: 1rem;
+        }
+
+        .button {
+            background-color: #0094ff;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+            .button:hover {
+                background-color: #0026ff;
+            }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="logo"></div>
+        <h1>Welcome to Book Stack</h1>
+        <p>A place where you can find your favorite books and enjoy reading them.</p>
+        <button class="button" onclick="location.href='homepage.aspx'">Get Started</button>
+    </div>
+</body>
+</html>

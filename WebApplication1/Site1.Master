@@ -27,6 +27,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>

@@ -6,12 +6,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div class ="container">
+    <br /><br /><div class ="container">
         <div class="row">
 
-            <div class ="col-md-6">
+            <div class ="col-md-5">
 
-                <div class="card shadow-sm rounded">
+                <div class="card border shadow-sm rounded-4">
 
 
                     <div class="card-body">
@@ -43,7 +43,7 @@
                         </div>
 
 
-                        <div class="row">
+                        <br /><div class="row">
                             <div class="col-md-4">
                                 <label>Author ID</label>
                                 <div class ="form-group">
@@ -75,7 +75,7 @@
 
 
 
-                        <div class="row">
+                        <br /><br /><br /><br /><div class="row">
                             <div class="col-4">
                                 <asp:Button class="btn btn-success btn-lg btn-block"  ID="Button2" runat="server" Text="Add" />
 
@@ -109,7 +109,7 @@
         </div>
 
 
-            <div class="col-md-6">
+            <div class="col-md-7">
 
 
                 <div class="card border-0 bg-light shadow-sm rounded-3">
@@ -142,23 +142,13 @@
 
                     <div class="card-body">
 
-                        <div class="row">
-                            <div class="col">
-                                <center>
-                                    <img src="imgs/library.png" width="100px" />
-                                </center>
-                            </div>
-
-                        </div>
+                   
 
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4>Your Issued Books</h4>
-                            
-                                    <asp:Label class="badge badge-pill badge-info" ID="Label2" runat="server" Text="your books info"></asp:Label>
-
-
+                                    <h4>Author List</h4>
+                        
                                 </center>
                             </div>
 

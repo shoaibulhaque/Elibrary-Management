@@ -2137,6 +2137,7 @@
     <Content Include="imgs\adminauthor.png" />
     <Content Include="imgs\adminpublisher.png" />
     <Content Include="imgs\adminuser.png" />
+    <Content Include="imgs\bookissue.png" />
     <Content Include="imgs\books.png" />
     <Content Include="imgs\defaulters-list.png" />
     <Content Include="imgs\digital-inventory %282%29.png" />
@@ -2144,10 +2145,12 @@
     <Content Include="imgs\home-bg.png" />
     <Content Include="imgs\in-homepage-banner.png" />
     <Content Include="imgs\library.png" />
+    <Content Include="imgs\librarybackground.jpg" />
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\signup-pic.png" />
     <Content Include="imgs\user-register.png" />
     <Content Include="in-homepage-banner.jpg" />
+    <Content Include="splash.html" />
     <Content Include="userlogin.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
