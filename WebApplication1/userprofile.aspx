@@ -158,9 +158,9 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label>Password</label>
+                                <label>Old Password</label>
                                 <div class ="form-group">
-                                    <asp:TextBox class ="form-control" ID="TextBox9" runat="server" placeholder ="Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
+                                    <asp:TextBox class ="form-control" ID="TextBox9" runat="server" placeholder ="Old Password" TextMode="Password" ReadOnly="true"></asp:TextBox>
 
                                 </div>
                             </div>
@@ -180,7 +180,7 @@
 
 
                         <div class="row">
-                            <div class="col">
+                            <div class="col-8 mx-auto">
                                 
 
                                 
@@ -248,7 +248,9 @@
                                  
                               
 <div class ="form-group">
-    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Sign Up"/></a>
+    <center>
+    <a href="usersignup.aspx"><input class="btn btn-block btn-primary btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Update"/></a>
+        </center>
 </div>
 
 
