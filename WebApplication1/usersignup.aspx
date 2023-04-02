@@ -233,7 +233,7 @@
                                  
                               
 <div class ="form-group">
-    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Sign Up"/></a>
+    <asp:Button class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Sign Up"/>
 </div>
 
 
