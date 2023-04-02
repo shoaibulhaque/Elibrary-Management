@@ -100,17 +100,17 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label>Date of birth</label>
+                                <label>City</label>
                                 <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox6" runat="server" placeholder ="Date of birth" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox class ="form-control" ID="TextBox6" runat="server" placeholder ="City"></asp:TextBox>
 
                                 </div>
                             </div>
 
                              <div class="col-md-4">
-                                <label>Date of birth</label>
+                                <label>Pincode</label>
                                 <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox7" runat="server" placeholder ="Date of birth" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox class ="form-control" ID="TextBox7" runat="server" placeholder ="Pincode" TextMode="Number"></asp:TextBox>
 
                                 </div>
                             </div>
