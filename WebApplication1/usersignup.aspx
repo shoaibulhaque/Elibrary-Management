@@ -121,6 +121,51 @@
 
                         <div class="row">
                             <div class="col">
+                                <label>Full Address</label>
+                                <div class ="form-group">
+                                    <asp:TextBox CssClass ="form-control" ID="TextBox5" runat="server" placeholder ="Full Adress" TextMode="MultiLine" Rows="2"></asp:TextBox>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="row">
+                            
+                                <div class ="col">
+                                    <center>
+                                    <span class="badge badge-pill badge-info">Primary</span>
+                                        </center>
+                                </div>
+                            
+                            </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>User ID</label>
+                                <div class ="form-group">
+                                    <asp:TextBox class ="form-control" ID="TextBox8" runat="server" placeholder ="User ID" ></asp:TextBox>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Password</label>
+                                <div class ="form-group">
+                                    <asp:TextBox class ="form-control" ID="TextBox9" runat="server" placeholder ="Password" TextMode="Password"></asp:TextBox>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col">
                                 
 
                                 
@@ -186,10 +231,7 @@
                                 </style>
 
                                  
-                                <div class ="form-group">
-    <button class="btn btn-primary btn-block btn-3d rounded-lg hover:-translate-y-0.5 transition-all duration-200 btn-slide" type="button">Login</button>
-</div>
-
+                              
 <div class ="form-group">
     <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Sign Up"/></a>
 </div>
