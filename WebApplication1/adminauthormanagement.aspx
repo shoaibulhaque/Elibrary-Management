@@ -1,14 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="userprofile.aspx.cs" Inherits="WebApplication1.userprofile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminauthormanagement.aspx.cs" Inherits="WebApplication1.adminauthormanagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
+
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-            <div class ="container-fluid">
+    <div class ="container">
         <div class="row">
 
-            <div class ="col-md-5">
+            <div class ="col-md-6">
 
                 <div class="card shadow-sm rounded">
 
@@ -18,7 +19,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <img src="imgs/general-user.png" width="100px" />
+                                    <img src="imgs/adminauthor.png" width="100px" />
                                 </center>
                             </div>
 
@@ -27,10 +28,7 @@
                         <div class="row">
                             <div class="col">
                                 <center>
-                                    <h4>Your Profile</h4>
-                                    <span>Account Status - </span>
-                                    <asp:Label class="badge badge-pill badge-info" ID="Label1" runat="server" Text="Your Status"></asp:Label>
-
+                                    <h4>Author Details</h4>
 
                                 </center>
                             </div>
@@ -46,18 +44,18 @@
 
 
                         <div class="row">
-                            <div class="col-md-6">
-                                <label>Full Name</label>
+                            <div class="col-md-3">
+                                <label>Author ID</label>
                                 <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox3" runat="server" placeholder ="Full Name"></asp:TextBox>
+                                    <asp:TextBox CssClass ="form-control" ID="TextBox3" runat="server" placeholder ="ID"></asp:TextBox>
 
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <label>Date of birth</label>
+                            <div class="col-md-9">
+                                <label>Author Name</label>
                                 <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox2" runat="server" placeholder ="Date of birth" TextMode="Date"></asp:TextBox>
+                                    <asp:TextBox CssClass ="form-control" ID="TextBox2" runat="server" placeholder ="Name"></asp:TextBox>
 
                                 </div>
                             </div>
@@ -270,7 +268,7 @@
         </div>
 
 
-            <div class="col-md-7">
+            <div class="col-md-6">
 
 
                 <div class="card border-0 bg-light shadow-sm rounded-3">
@@ -359,5 +357,6 @@
 
 
         </div>
+
 
 </asp:Content>

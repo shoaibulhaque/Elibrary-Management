@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminauthormanagement.aspx" />
     <Content Include="adminlogin.aspx" />
+    <Content Include="adminpublishermanagement.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="bootstrap\js\jquery-3.3.1.slim.min.js" />
@@ -2132,6 +2134,8 @@
     <Content Include="fontawesome\svgs\solid\yin-yang.svg" />
     <Content Include="fontawesome\svgs\solid\z.svg" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\adminauthor.png" />
+    <Content Include="imgs\adminpublisher.png" />
     <Content Include="imgs\adminuser.png" />
     <Content Include="imgs\books.png" />
     <Content Include="imgs\defaulters-list.png" />
@@ -2151,12 +2155,26 @@
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminauthormanagement.aspx.cs">
+      <DependentUpon>adminauthormanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminauthormanagement.aspx.designer.cs">
+      <DependentUpon>adminauthormanagement.aspx</DependentUpon>
+    </Compile>
     <Compile Include="adminlogin.aspx.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpublishermanagement.aspx.cs">
+      <DependentUpon>adminpublishermanagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpublishermanagement.aspx.designer.cs">
+      <DependentUpon>adminpublishermanagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
