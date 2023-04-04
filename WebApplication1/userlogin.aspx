@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div class ="container">
+    <br /><br /><br /><div class ="container">
         <div class="row">
 
             <div class ="col-md-6 mx-auto">
@@ -134,7 +134,7 @@
                     
 
             </div>
-                <a href="homepage.aspx"><< Back to Home</a></br></br></br>
+                <a href="homepage.aspx"><< Back to Home</a></br></br></br><br /><br /><br />
                 
 
         </div>
