@@ -44,8 +44,9 @@
                             <div class="col">
                                 
                                 </br><div class ="form-group">
+                                    
                                     <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Member ID"></asp:TextBox>
-
+                                       
                                 </div>
 
 
@@ -53,6 +54,8 @@
                                     <asp:TextBox CssClass ="form-control" ID="TextBox2" runat="server" placeholder ="password" TextMode="Password"></asp:TextBox>
 
                                 </div></br>
+
+
 
                                 <style>
                                     .btn-3d {
@@ -116,11 +119,13 @@
 
                                  
                                 <div class ="form-group">
-    <asp:Button class="btn btn-primary btn-block btn-3d rounded-lg hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Login"/>
+                                   
+    <asp:Button class="btn btn-primary btn-block rounded-lg hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Login"/>
+                                        
 </div>
 
 <div class ="form-group">
-    <a href="usersignup.aspx"><input class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Sign Up"/></a>
+    <a href="usersignup.aspx"><input class="btn btn-info btn-block hover:-translate-y-0.5 transition-all duration-200 btn-slide" id="Button2" type="button" value="Sign Up"/></a>
 </div>
 
 

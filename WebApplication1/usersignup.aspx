@@ -136,7 +136,7 @@
                             
                                 <div class ="col">
                                     <center>
-                                    <span class="badge badge-pill badge-info">Primary</span>
+                                    <span class="badge badge-pill badge-info">Login Credentials</span>
                                         </center>
                                 </div>
                             
@@ -145,7 +145,7 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <label>User ID</label>
+                                Member ID
                                 <div class ="form-group">
                                     <asp:TextBox class ="form-control" ID="TextBox8" runat="server" placeholder ="User ID" ></asp:TextBox>
 
@@ -233,7 +233,7 @@
                                  
                               
 <div class ="form-group">
-    <asp:Button class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Sign Up"/>
+    <asp:Button class="btn btn-info btn-block btn-3d hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Sign Up" OnClick="Button1_Click1"/>
 </div>
 
 
