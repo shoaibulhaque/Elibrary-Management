@@ -46,7 +46,7 @@ namespace WebApplication1
 
                     LinkButton3.Visible = true; // Logout link button
                     LinkButton7.Visible = true; // Hello User link button
-                    LinkButton7.Text = "Hello" + Session["username"].ToString();
+                    LinkButton7.Text = "Hello " + Session["username"].ToString();
 
 
                     // Admin role links 
