@@ -139,8 +139,31 @@ namespace WebApplication1
             Response.Redirect("usersignup.aspx");
         }
 
-        protected void LinkButton3_Click()
+
+        // Logout button link
+        protected void LinkButton3_Click(object sender, EventArgs e)
         {
+            // Making all the session variables blank
+            Session["username"] = null;
+            Session["fullname"] = null;
+            Session["role"]     = null;
+            Session["status"]   = null;
+
+            LinkButton1.Visible = true; // User login link button
+            LinkButton2.Visible = true; // Sign up link button
+
+            LinkButton3.Visible = false; // Logout link button
+            LinkButton7.Visible = false; // Hello User link button
+
+            // Admin role links 
+
+            LinkButton6.Visible = true; // Admin login link button
+
+            LinkButton11.Visible = false; // author management link button
+            LinkButton12.Visible = false; // oublisher management link button
+            LinkButton8.Visible = false; // book inventory link button
+            LinkButton9.Visible = false; // book issuing link button
+            LinkButton10.Visible = false; // member management link button
 
         }
     }
