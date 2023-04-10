@@ -39,8 +39,15 @@ namespace WebApplication1
                 {
                     while (dr.Read())
                     {
-                        Response.Write("<script>alert('"+dr.GetValue(0).ToString()+"');</script>");
+                        Response.Write("<script>alert('Login Successful !');</script>");
+                        // Creating session variables ---> global throughout the session 
+                        Session["username"] = dr.GetValue(0).ToString();
+                        Session["fullname"] = dr.GetValue(2).ToString();
+                        Session["role"] = "admin";  // Hardcoded as only links which are permissible for user will be shown 
+
+
                     }
+                    Response.Redirect("homepage.aspx");
 
 
                 }

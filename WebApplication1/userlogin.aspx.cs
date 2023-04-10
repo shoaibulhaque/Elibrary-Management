@@ -41,8 +41,17 @@ namespace WebApplication1
                 {
                     while (dr.Read())
                     {
-                       // Response.Write()
-                    };
+                        Response.Write("<script>alert('Login Successful !');</script>");
+
+                        // Creating session variables ---> global throughout the session 
+                        Session["username"] = dr.GetValue(8).ToString();  
+                        Session["fullname"] = dr.GetValue(0).ToString();  
+                        Session["role"] = "user";  // Hardcoded as only links which are permissible for user will be shown 
+                        Session["status"] = dr.GetValue(10).ToString(); // GetValue() --> find by index
+
+
+                    }
+                    Response.Redirect("homepage.aspx");
                 }
                 else
                 {
@@ -53,9 +62,9 @@ namespace WebApplication1
 
             }
             catch (Exception ex)
-            { 
- 
-            
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+
             }
 
 
