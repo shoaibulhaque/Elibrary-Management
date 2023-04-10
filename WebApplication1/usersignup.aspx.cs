@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.WebSockets;
 
 namespace WebApplication1
 {
@@ -21,50 +22,111 @@ namespace WebApplication1
        // Sign up button click event
         protected void Button1_Click1(object sender, EventArgs e)
         {
-           //Response.Write("<script>alert('Testing');</script>"); // just checking 
-
-           // Good practice to enclose server and database related things in try-catch block
-
-           try
+            if (checkMemberExist()) // checking if checkMemberExist() returns true of false 
             {
-               SqlConnection con = new SqlConnection(strcon); // ( Step 1 of Sign up Event ) -- we created an object of SqlConnection class and passed in our varible "strcon" which contains the database connection string. syntax ( Object instantiation C# ) --> <ClassName> object_name = new <ClassName>(any_param)
+                Response.Write("<script>alert('Member already exist with this member ID, try again with a different one !');</script>");
+            }
+            else // if false, then signup only 
+            {
+                signUpNewMember();
+            }
+            
 
-               // ( Step 2 checking connectivity with database )
-               if (con.State == ConnectionState.Closed) // Check if connection is closed
-               {
-                   con.Open(); // Open the connection, if closed
-               }
+        }
 
-               // Creating and executing SQL query to save all the data in its relevant database table
+        // Custom func to check if member already exists or not
+        bool checkMemberExist() // returns a boolean value
+        {
+            try
+            {   
+                // ( Step 1 ) --> first, check the connectivity
 
-               SqlCommand cmd = new SqlCommand("INSERT INTO member_master_tbl(full_name,dob,contact_no,email,state,city,pincode,full_address,member_id,password,account_status) values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@full_address,@member_id,@password,@account_status)", con); // To keep it dynamic, we have used @ with placeholder names in values.
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
-               // Ectracting data from the textboxes and putting them into the placeholders defined in the sql 'INSERT' command
-               cmd.Parameters.AddWithValue("@full_name", TextBox3.Text.Trim());
-               cmd.Parameters.AddWithValue("@dob", TextBox2.Text.Trim());
-               cmd.Parameters.AddWithValue("@Contact_no", TextBox1.Text.Trim());
-               cmd.Parameters.AddWithValue("@email", TextBox4.Text.Trim());
-               cmd.Parameters.AddWithValue("@state", DropDownList1.SelectedItem.Value);
-               cmd.Parameters.AddWithValue("@city", TextBox6.Text.Trim());
-               cmd.Parameters.AddWithValue("@pincode", TextBox7.Text.Trim());
-               cmd.Parameters.AddWithValue("@full_address", TextBox5.Text.Trim());
-               cmd.Parameters.AddWithValue("@member_id", TextBox8.Text.Trim());
-               cmd.Parameters.AddWithValue("@password", TextBox9.Text.Trim());
-               cmd.Parameters.AddWithValue("@account_status", "pending");
+                // (Step 2 ) --> SQL query to check if any record with user's entered id exist or not
 
-               cmd.ExecuteNonQuery(); // Fire ( Execute ) the query 
-               con.Close(); // Close the Connection
+                SqlCommand cmd = new SqlCommand("SELECT * FROM member_master_tbl where member_id = '"+TextBox8.Text.Trim()
+                    +"';", con);
 
-               // Javascript pop-up
-               Response.Write("<script>alert('Sign Up successful. Go to User Login to login');</script>");
-                
-           }
-           catch (Exception ex)
-           {
-                // If any exception caught, pop it up its message
-               Response.Write("<script>alert('" + ex.Message + "');</script>");
-           }
+                // Sql adapter to extract the result of the above SQL
+                // 
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();  // passing the record into C# Datatable to store it temporarily store in order to measure the count of record
+                da.Fill(dt); // filling the datatable with the record
 
+                // checking if the record count is > or = 1 ( means, member exists already )
+
+                if (dt.Rows.Count >= 1)
+                {
+                    return true;
+                }
+                else { return false; }
+
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                return false;
+            }
+
+        } 
+
+
+
+        // Custom Function
+
+        void signUpNewMember()
+        {
+            //Response.Write("<script>alert('Testing');</script>"); // just checking 
+
+            // Good practice to enclose server and database related things in try-catch block
+
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon); // ( Step 1 of Sign up Event ) -- we created an object of SqlConnection class and passed in our varible "strcon" which contains the database connection string. syntax ( Object instantiation C# ) --> <ClassName> object_name = new <ClassName>(any_param)
+
+                // ( Step 2 checking connectivity with database )
+                if (con.State == ConnectionState.Closed) // Check if connection is closed
+                {
+                    con.Open(); // Open the connection, if closed
+                }
+
+                // Creating and executing SQL query to save all the data in its relevant database table
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO member_master_tbl(full_name,dob,contact_no,email,state,city,pincode,full_address,member_id,password,account_status) values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@full_address,@member_id,@password,@account_status)", con); // To keep it dynamic, we have used @ with placeholder names in values.
+
+                // Ectracting data from the textboxes and putting them into the placeholders defined in the sql 'INSERT' command
+                cmd.Parameters.AddWithValue("@full_name", TextBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@dob", TextBox2.Text.Trim());
+                cmd.Parameters.AddWithValue("@Contact_no", TextBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@email", TextBox4.Text.Trim());
+                cmd.Parameters.AddWithValue("@state", DropDownList1.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@city", TextBox6.Text.Trim());
+                cmd.Parameters.AddWithValue("@pincode", TextBox7.Text.Trim());
+                cmd.Parameters.AddWithValue("@full_address", TextBox5.Text.Trim());
+                cmd.Parameters.AddWithValue("@member_id", TextBox8.Text.Trim());
+                cmd.Parameters.AddWithValue("@password", TextBox9.Text.Trim());
+                cmd.Parameters.AddWithValue("@account_status", "pending");
+
+                cmd.ExecuteNonQuery(); // Fire ( Execute ) the query 
+                con.Close(); // Close the Connection
+
+                // Javascript pop-up
+                Response.Write("<script>alert('Sign Up successful. Go to User Login to login');</script>");
+
+            }
+            catch (Exception ex) // where, ex --> Exception's class obj
+            {
+                // If any exception caught, pop it up its message using javascript
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
         }
     }
 }
