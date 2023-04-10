@@ -44,7 +44,7 @@
                             <div class="col">
                                 
                                 </br><div class ="form-group">
-                                    
+                                    <label>Member ID</label>
                                     <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Member ID"></asp:TextBox>
                                        
                                 </div>
@@ -120,7 +120,7 @@
                                  
                                 <div class ="form-group">
                                    
-    <asp:Button class="btn btn-primary btn-block rounded-lg hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Login"/>
+    <asp:Button class="btn btn-primary btn-block rounded-lg hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button1" runat="server" Text="Login" OnClick="Button1_Click"/>
                                         
 </div>
 
