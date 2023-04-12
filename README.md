@@ -15,6 +15,3 @@
   </a>
 </p>
 
-## Description
-
-This is an e-library management website built using C#, ASP.NET, Bootstrap, and SQL Server. The website allows users to browse and search for books, check out books, and manage their accounts.
