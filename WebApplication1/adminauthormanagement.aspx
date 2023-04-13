@@ -49,7 +49,7 @@
                                 <div class ="form-group">
                                     <div class ="input-group">
                                     <asp:TextBox CssClass ="form-control" ID="TextBox3" runat="server" placeholder ="ID"></asp:TextBox>
-                                    <asp:Button class="btn btn-primary hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button21" runat="server" Text="Go"/>
+                                    <asp:Button class="btn btn-primary hover:-translate-y-0.5 transition-all duration-200 btn-slide" ID="Button21" runat="server" Text="Go" OnClick="Button21_Click"/>
                                         </div>
                                 </div>
                             </div>
@@ -77,17 +77,17 @@
 
                         <br /><br /><br /><br /><div class="row">
                             <div class="col-4">
-                                <asp:Button class="btn btn-success btn-lg btn-block"  ID="Button2" runat="server" Text="Add" />
+                                <asp:Button class="btn btn-success btn-lg btn-block"  ID="Button2" runat="server" Text="Add" OnClick="Button2_Click" />
 
                             </div>
 
                             <div class="col-4">
-                                <asp:Button class="btn btn-primary btn-lg btn-block"  ID="Button1" runat="server" Text="Update" />
+                                <asp:Button class="btn btn-primary btn-lg btn-block"  ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
 
                             </div>
 
                             <div class="col-4">
-                                <asp:Button class="btn btn-danger btn-lg btn-block"  ID="Button5" runat="server" Text="Delete" />
+                                <asp:Button class="btn btn-danger btn-lg btn-block"  ID="Button5" runat="server" Text="Delete" OnClick="Button5_Click"/>
 
                             </div>
 
