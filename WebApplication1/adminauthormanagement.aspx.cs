@@ -58,6 +58,17 @@ namespace WebApplication1
         // delete button event
         protected void Button5_Click(object sender, EventArgs e)
         {
+            if (checkIfAuthorExists())
+            {
+                deleteAuthor();
+
+            }
+            else
+            {
+                Response.Write("<script>alert('Author does not exist !');</script>");
+            }
+
+
 
         }
 
@@ -176,6 +187,34 @@ namespace WebApplication1
                 Response.Write("<script>alert('"+ex.Message+"');</script>");
                 return false;
             }
+
+
+        }
+
+        // delete author func
+
+        void deleteAuthor()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed) { con.Open(); }
+
+                SqlCommand cmd = new SqlCommand("DELETE FROM author_master_tbl WHERE author_id='"+TextBox3.Text.Trim()+"' ", con);
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Response.Write("<script>alert('Author deleted !');</script>");
+
+
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('"+ex.Message+"');</script>");
+
+            }
+
 
 
         }
