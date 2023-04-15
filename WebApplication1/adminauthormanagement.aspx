@@ -1,5 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminauthormanagement.aspx.cs" Inherits="WebApplication1.adminauthormanagement" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".table").prepend($("<thead></thead>").append($(this).find("tr:first"))).dataTable();
+
+
+        });
+
+    </script>
+
+
 </asp:Content>
 
 
@@ -164,11 +174,17 @@
 
 
                          <div class="row">
+                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:elibraryDBConnectionString %>" ProviderName="<%$ ConnectionStrings:elibraryDBConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [author_master_tbl]"></asp:SqlDataSource>
                             <div class="col">
                                 
-                            </div>
-                             <asp:GridView class ="table table-striped table-bordered" ID="GridView1" runat="server"></asp:GridView>
-                             
+                            
+                             <asp:GridView class ="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="author_id" DataSourceID="SqlDataSource1">
+                                 <Columns>
+                                     <asp:BoundField DataField="author_id" HeaderText="author_id" ReadOnly="True" SortExpression="author_id" />
+                                     <asp:BoundField DataField="author_name" HeaderText="author_name" SortExpression="author_name" />
+                                 </Columns>
+                             </asp:GridView>
+                             </div>
 
                         </div>
 

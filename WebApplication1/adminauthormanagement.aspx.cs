@@ -14,10 +14,10 @@ namespace WebApplication1
     public partial class adminauthormanagement : System.Web.UI.Page
     {
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString; // database connectivity ( Step 1 ) 
-
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            GridView1.DataBind();
         }
 
         // add button event
@@ -100,6 +100,8 @@ namespace WebApplication1
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Author Updated !');</script>");
+                clearForm();
+                GridView1.DataBind();
 
             }
             catch (Exception ex)
@@ -136,6 +138,8 @@ namespace WebApplication1
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Author added !');</script>");
+                clearForm();
+                GridView1.DataBind();
 
             }
             catch (Exception ex)
@@ -205,6 +209,8 @@ namespace WebApplication1
                 cmd.ExecuteNonQuery();
                 con.Close();
                 Response.Write("<script>alert('Author deleted !');</script>");
+                clearForm();
+                GridView1.DataBind();
 
 
 
@@ -216,6 +222,14 @@ namespace WebApplication1
             }
 
 
+
+        }
+
+        // clear form
+        void clearForm()
+        {
+            TextBox3.Text = "";
+            TextBox2.Text = "";
 
         }
 
