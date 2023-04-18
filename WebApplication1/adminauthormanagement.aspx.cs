@@ -76,8 +76,54 @@ namespace WebApplication1
         // go button event
         protected void Button21_Click(object sender, EventArgs e)
         {
+            getAuthorById();
+        }
+
+
+        void getAuthorById() 
+        
+        {
+
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // creating a query command
+                SqlCommand cmd = new SqlCommand("SELECT * from author_master_tbl where author_id='" + TextBox3.Text.Trim() + "';", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd); // disconnected architecture 
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                if (dt.Rows.Count >= 1)
+                {
+                    TextBox2.Text = dt.Rows[0][1].ToString();   /// Rows[0][1] where [0]  --> first row and [1] --> 2nd column
+
+                }
+                else
+                {
+                    Response.Write("<script>alert('Invalid author Id');</script>");
+                    
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+                
+            }
+
+
 
         }
+
+
 
         // custom function to update author
         void updateAuthor()

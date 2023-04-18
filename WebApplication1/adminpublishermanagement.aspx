@@ -75,7 +75,7 @@
 
                         <br /><br /><br /><br /><div class="row">
                             <div class="col-4">
-                                <asp:Button class="btn btn-success btn-lg btn-block"  ID="Button2" runat="server" Text="Add" />
+                                <asp:Button class="btn btn-success btn-lg btn-block"  ID="Button2" runat="server" Text="Add" OnClick="Button2_Click" />
 
                             </div>
 
