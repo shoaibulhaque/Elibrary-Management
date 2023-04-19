@@ -95,7 +95,7 @@ namespace WebApplication1
                 }
 
                 // Creating  a query command to execute
-                SqlCommand cmd = new SqlCommand("\"SELECT * from publisher_master_tbl where author_id='"+ TextBox3.Text.Trim() +"';", con);
+                SqlCommand cmd = new SqlCommand("SELECT * from publisher_master_tbl where publisher_id='"+ TextBox3.Text.Trim() +"';", con);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -173,7 +173,7 @@ namespace WebApplication1
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("UPDATE publisher_master_tbl SET publisher_name=@publisher_name WHERE publiser_id='" + TextBox3.Text.Trim() + "';", con);
+                SqlCommand cmd = new SqlCommand("UPDATE publisher_master_tbl SET publisher_name=@publisher_name WHERE publisher_id='" + TextBox3.Text.Trim() + "';", con);
 
                 cmd.Parameters.AddWithValue("@publisher_name", TextBox2.Text.Trim());
                 cmd.ExecuteNonQuery();
