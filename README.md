@@ -1,4 +1,4 @@
-<h1 align="center">E-Library Management</h1>
+<h1 align="center">Online Library Management</h1>
 
 <p align="center">
   <a href="https://dotnet.microsoft.com/apps/aspnet">
