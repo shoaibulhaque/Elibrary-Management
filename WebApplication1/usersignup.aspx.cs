@@ -22,17 +22,17 @@ namespace WebApplication1
        // Sign up button click event
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            signUpNewMember();
+
             //Response.Write("<script>alert('Testing');</script>"); // just checking 
 
-            //if (checkMemberExist()) // checking if checkmemberexist() returns true of false 
-            //{
-            //    Response.Write("<script>alert('member already exist with this member id, try again with a different one !');</script>");
-            //}
-            //else // if false, then signup only 
-            //{
-            //    signUpNewMember();
-            //}
+            if (checkMemberExist()) // checking if checkmemberexist() returns true of false 
+            {
+                Response.Write("<script>alert('member already exist with this member id, try again with a different one !');</script>");
+            }
+            else // if false, then signup only 
+            {
+                signUpNewMember();
+            }
 
 
 
