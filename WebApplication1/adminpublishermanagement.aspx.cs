@@ -15,7 +15,7 @@ namespace WebApplication1
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;  // Database  connection string
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataBind();
+            GridView2.DataBind();
 
         }
 
@@ -144,7 +144,7 @@ namespace WebApplication1
                 cmd.ExecuteNonQuery();
                 con.Close();
                 clearForm();
-                GridView1.DataBind();
+                GridView2.DataBind();
 
             }
             catch (Exception ex)
@@ -180,7 +180,7 @@ namespace WebApplication1
                 con.Close();
                 Response.Write("<script>alert('Publisher updated');</script>");
                 clearForm();
-                GridView1.DataBind();
+                GridView2.DataBind();
 
 
 
@@ -211,7 +211,7 @@ namespace WebApplication1
                 con.Close();
                 Response.Write("<script>alert('Publisher Deleted !');</script>");
                 clearForm();
-                GridView1.DataBind();
+                GridView2.DataBind();
 
 
 

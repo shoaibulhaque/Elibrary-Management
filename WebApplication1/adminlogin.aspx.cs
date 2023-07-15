@@ -33,7 +33,7 @@ namespace WebApplication1
                 {
                     con.Open();
                 }
-                SqlCommand cmd = new SqlCommand("select * from admin_login_table where username='"+TextBox1.Text.Trim()+"' AND password='"+TextBox2.Text.Trim()+"'; ", con);
+                SqlCommand cmd = new SqlCommand("select * from admin_login_tbl where username='"+TextBox1.Text.Trim()+"' AND password='"+TextBox2.Text.Trim()+"'; ", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
