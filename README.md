@@ -58,7 +58,7 @@ You will need the following tools and frameworks:
 - .NET Core SDK
 
 ### Installation
-1. Clone the repository:
+- Clone the repository:
 ```bash
 git clone https://github.com/user/bookstack.git
 ```
