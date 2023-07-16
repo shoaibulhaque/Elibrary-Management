@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="adminbookissuing.aspx.cs" Inherits="WebApplication1.adminbookissuing" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-	<script type="text/javascript">
+    <script type="text/javascript">
         $(document).ready(function () {
             $(".table").prepend($("
                 < thead ></thead > ").append($(this).find("tr: first"))).dataTable();
@@ -10,7 +10,7 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-	<div class="container-fluid">
+    <div class="container-fluid">
 		<div class="row">
 			<div class="col-md-5">
 				<div class="card">

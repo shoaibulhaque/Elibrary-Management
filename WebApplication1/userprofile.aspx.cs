@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Reflection.Emit;
+using System.Text.RegularExpressions;
 
 namespace WebApplication1
 {
@@ -83,21 +84,109 @@ namespace WebApplication1
                 }
 
 
+                string fullName = TextBox1.Text.Trim();
+                string dob = TextBox2.Text.Trim();
+                string contactNo = TextBox3.Text.Trim();
+                string email = TextBox4.Text.Trim();
+                string state = DropDownList1.SelectedItem.Value;
+                string city = TextBox6.Text.Trim();
+                string pincode = TextBox7.Text.Trim();
+                string fullAddress = TextBox5.Text.Trim();
+                string pass = TextBox9.Text.Trim();
+
+
+
+                // Validate input values
+                if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(dob) || string.IsNullOrEmpty(contactNo) ||
+                    string.IsNullOrEmpty(email) || string.IsNullOrEmpty(state) || string.IsNullOrEmpty(city) ||
+                    string.IsNullOrEmpty(pincode) || string.IsNullOrEmpty(fullAddress) ||
+                    string.IsNullOrEmpty(pass))
+                {
+                    // Show alert message if any required field is empty
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please fill in all the required fields.');", true);
+                    return;
+                }
+
+                // Validate input values
+                if (!Regex.IsMatch(contactNo, @"^\d{4}-\d{7}$"))
+                {
+                    // Show alert message if contact number is not in Pakistani format
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter the contact number in Pakistani format (e.g., 0000-0000000).');", true);
+                    return;
+                }
+
+                if (!Regex.IsMatch(pincode, @"^\d{5}$"))
+                {
+                    // Show alert message if pincode is not in Pakistani format
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter the pincode in Pakistani format (e.g., 00000).');", true);
+                    return;
+                }
+
+                if (pass.Length <= 6)
+                {
+                    // Show alert message if password length is not greater than 6
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Password must be greater than 6 characters.');", true);
+                    return;
+                }
+
+                if (!Regex.IsMatch(fullName, @"^[A-Za-z ]+$"))
+                {
+                    // Show alert message if full name format is incorrect
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter a valid full name.');", true);
+                    return;
+                }
+
+
+                if (!Regex.IsMatch(email, @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"))
+                {
+                    // Show alert message if email format is incorrect
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter a valid email address.');", true);
+                    return;
+                }
+
+                // Check if the contact number already exists in the database
+                SqlCommand checkContactNoCmd = new SqlCommand("SELECT COUNT(*) FROM member_master_tbl WHERE contact_no = @contact_no AND member_id <> @member_id", con);
+                checkContactNoCmd.Parameters.AddWithValue("@contact_no", contactNo);
+                checkContactNoCmd.Parameters.AddWithValue("@member_id", Session["username"].ToString().Trim());
+                int contactNoCount = (int)checkContactNoCmd.ExecuteScalar();
+
+                if (contactNoCount > 0)
+                {
+                    // Show alert message if the contact number already exists
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('The contact number is already registered.');", true);
+                    return;
+                }
+
+                // Check if the email already exists in the database
+                SqlCommand checkEmailCmd = new SqlCommand("SELECT COUNT(*) FROM member_master_tbl WHERE email = @email AND member_id <> @member_id", con);
+                checkEmailCmd.Parameters.AddWithValue("@email", email);
+                checkEmailCmd.Parameters.AddWithValue("@member_id", Session["username"].ToString().Trim());
+                int emailCount = (int)checkEmailCmd.ExecuteScalar();
+
+                if (emailCount > 0)
+                {
+                    // Show alert message if the email already exists
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('The email address is already registered.');", true);
+                    return;
+                }
+
                 SqlCommand cmd = new SqlCommand("update member_master_tbl set full_name=@full_name, dob=@dob, contact_no=@contact_no, email=@email, state=@state, city=@city, pincode=@pincode, full_address=@full_address, password=@password, account_status=@account_status WHERE member_id='" + Session["username"].ToString().Trim() + "'", con);
 
                 cmd.Parameters.AddWithValue("@full_name", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@dob", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@contact_no", TextBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@contact_no", contactNo);
                 cmd.Parameters.AddWithValue("@email", TextBox4.Text.Trim());
                 cmd.Parameters.AddWithValue("@state", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@city", TextBox6.Text.Trim());
-                cmd.Parameters.AddWithValue("@pincode", TextBox7.Text.Trim());
+                cmd.Parameters.AddWithValue("@pincode", pincode);
                 cmd.Parameters.AddWithValue("@full_address", TextBox5.Text.Trim());
                 cmd.Parameters.AddWithValue("@password", password);
                 cmd.Parameters.AddWithValue("@account_status", "pending");
+                cmd.Parameters.AddWithValue("@member_id", Session["username"].ToString().Trim());
 
                 int result = cmd.ExecuteNonQuery();
                 con.Close();
+
                 if (result > 0)
                 {
 

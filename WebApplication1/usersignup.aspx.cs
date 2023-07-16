@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -105,22 +106,103 @@ namespace WebApplication1
 
                 // Creating and executing SQL query to save all the data in its relevant database table
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO member_master_tbl(full_name,dob,contact_no,email,state,city,pincode,full_address,member_id,password,account_status) values(@full_name,@dob,@contact_no,@email,@state,@city,@pincode,@full_address,@member_id,@password,@account_status)", con); // To keep it dynamic, we have used @ with placeholder names in values.
+                string fullName = TextBox3.Text.Trim();
+                string dob = TextBox2.Text.Trim();
+                string contactNo = TextBox1.Text.Trim();
+                string email = TextBox4.Text.Trim();
+                string state = DropDownList1.SelectedItem.Value;
+                string city = TextBox6.Text.Trim();
+                string pincode = TextBox7.Text.Trim();
+                string fullAddress = TextBox5.Text.Trim();
+                string memberId = TextBox8.Text.Trim();
+                string password = TextBox9.Text.Trim();
+                string accountStatus = "pending";
 
-                // Ectracting data from the textboxes and putting them into the placeholders defined in the sql 'INSERT' command
-                cmd.Parameters.AddWithValue("@full_name", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@dob", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@Contact_no", TextBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@email", TextBox4.Text.Trim());
-                cmd.Parameters.AddWithValue("@state", DropDownList1.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@city", TextBox6.Text.Trim());
-                cmd.Parameters.AddWithValue("@pincode", TextBox7.Text.Trim());
-                cmd.Parameters.AddWithValue("@full_address", TextBox5.Text.Trim());
-                cmd.Parameters.AddWithValue("@member_id", TextBox8.Text.Trim());
-                cmd.Parameters.AddWithValue("@password", TextBox9.Text.Trim());
-                cmd.Parameters.AddWithValue("@account_status", "pending");
+                // Validate input values
+                if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(dob) || string.IsNullOrEmpty(contactNo) ||
+                    string.IsNullOrEmpty(email) || string.IsNullOrEmpty(state) || string.IsNullOrEmpty(city) ||
+                    string.IsNullOrEmpty(pincode) || string.IsNullOrEmpty(fullAddress) || string.IsNullOrEmpty(memberId) ||
+                    string.IsNullOrEmpty(password))
+                {
+                    // Show alert message if any required field is empty
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please fill in all the required fields.');", true);
+                    return;
+                }
 
-                cmd.ExecuteNonQuery(); // Fire ( Execute ) the query 
+                if (!Regex.IsMatch(fullName, @"^[A-Za-z ]+$"))
+                {
+                    // Show alert message if full name format is incorrect
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter a valid full name.');", true);
+                    return;
+                }
+
+                if (password.Length <= 6)
+                {
+                    // Show alert message if password length is not greater than 6
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Password must be greater than 6 characters.');", true);
+                    return;
+                }
+
+                // Validate input values
+                if (!Regex.IsMatch(contactNo, @"^\d{4}-\d{7}$"))
+                {
+                    // Show alert message if contact number is not in Pakistani format
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter the contact number in Pakistani format (e.g., 0000-0000000).');", true);
+                    return;
+                }
+
+                if (!Regex.IsMatch(pincode, @"^\d{5}$"))
+                {
+                    // Show alert message if pincode is not in Pakistani format
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('Please enter the pincode in Pakistani format (e.g., 00000).');", true);
+                    return;
+                }
+
+                // Check if the contact number already exists
+                SqlCommand checkContactNoCmd = new SqlCommand("SELECT COUNT(*) FROM member_master_tbl WHERE contact_no = @contact_no", con);
+                checkContactNoCmd.Parameters.AddWithValue("@contact_no", contactNo);
+                int contactNoCount = (int)checkContactNoCmd.ExecuteScalar();
+
+                // Check if the email already exists
+                SqlCommand checkEmailCmd = new SqlCommand("SELECT COUNT(*) FROM member_master_tbl WHERE email = @email", con);
+                checkEmailCmd.Parameters.AddWithValue("@email", email);
+                int emailCount = (int)checkEmailCmd.ExecuteScalar();
+
+                // Validate input values
+                if (contactNoCount > 0)
+                {
+                    // Show alert message if the contact number already exists
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('The provided contact number is already registered. Please use a different contact number.');", true);
+                    return;
+                }
+
+                if (emailCount > 0)
+                {
+                    // Show alert message if the email already exists
+                    ScriptManager.RegisterStartupScript(this, GetType(), "showalert", "alert('The provided email is already registered. Please use a different email.');", true);
+                    return;
+                }
+
+
+
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO member_master_tbl(full_name, dob, contact_no, email, state, city, pincode, full_address, member_id, password, account_status) " +
+                        "VALUES (@full_name, @dob, @contact_no, @email, @state, @city, @pincode, @full_address, @member_id, @password, @account_status)",
+                    con);
+
+                cmd.Parameters.AddWithValue("@full_name", fullName);
+                cmd.Parameters.AddWithValue("@dob", dob);
+                cmd.Parameters.AddWithValue("@contact_no", contactNo);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@state", state);
+                cmd.Parameters.AddWithValue("@city", city);
+                cmd.Parameters.AddWithValue("@pincode", pincode);
+                cmd.Parameters.AddWithValue("@full_address", fullAddress);
+                cmd.Parameters.AddWithValue("@member_id", memberId);
+                cmd.Parameters.AddWithValue("@password", password);
+                cmd.Parameters.AddWithValue("@account_status", accountStatus);
+
+                cmd.ExecuteNonQuery();
                 con.Close(); // Close the Connection
 
                 // Javascript pop-up

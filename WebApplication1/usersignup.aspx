@@ -64,7 +64,7 @@
                             <div class="col-md-6">
                                 <label>Contact No</label>
                                 <div class ="form-group">
-                                    <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Contact No" TextMode="Number" ></asp:TextBox>
+                                    <asp:TextBox CssClass ="form-control" ID="TextBox1" runat="server" placeholder ="Contact No" ></asp:TextBox>
 
                                 </div>
                             </div>
