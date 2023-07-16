@@ -15,3 +15,60 @@
   </a>
 </p>
 
+## BookStack
+
+BookStack is an online library management system that allows users to browse, read, and manage books in a digital catalog.
+
+## Overview
+BookStack is a web application developed as a university project. It provides the following functionalities:
+
+- Member signup and login: Users can create their accounts and log in to access the library catalog.
+- Book search and viewing: Users can search for books based on title, author, publisher, or category, and view detailed book information, including availability.
+- Admin login for librarians: Librarians can log in as admins and access the admin dashboard.
+- Managing book inventory: Admins can add, edit, or delete books from the library catalog.
+- Managing book authors and publishers: Admins can add, edit, or delete author and publisher information in the database.
+- Managing member accounts: Admins can view, edit, or delete member accounts in the database.
+- Book issuance and returns: Admins can issue books to members and record return dates.
+
+## Key Features
+
+- Member signup and login: Users can create their own accounts and log in to access the library catalog.
+- Book search and viewing: Users can search for books by title, author, publisher, or category, and view detailed book information and availability.
+- Admin login for librarians: Librarians can log in as admins and access the admin dashboard.
+- Managing book inventory: Admins can add, edit, or delete books from the library catalog.
+- Managing book authors and publishers: Admins can add, edit, or delete authors and publishers from the database.
+- Managing member accounts: Admins can view, edit, or delete member accounts from the database.
+- Book issuance and returns: Admins can issue books to members and record return dates.
+
+## Tech Stack
+BookStack utilizes the following technologies:
+
+- Backend: ASP.NET with C#
+- Database: SQL Server
+- Frontend UI: Bootstrap
+
+## Getting Started
+To set up the BookStack project on your local machine for development and testing purposes, follow these steps:
+
+### Prerequisites
+You will need the following tools and frameworks:
+
+- Visual Studio 2019
+- SQL Server
+- .NET Core SDK
+
+### Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/user/bookstack.git
+```
+### Setup the database:
+
+1. Run the SQL scripts in the `database/scripts` folder to create the necessary database and tables.
+2. Configure the connection strings in the `appsettings.json` file to point to your SQL Server instance.
+3. Build and run the application using Visual Studio 2019.
+
+By following these steps, you will have BookStack up and running on your local machine, allowing you to develop and test the application.
+
+
+
