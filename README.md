@@ -39,16 +39,6 @@ BookStack is a web application developed as a university project. It provides th
 - Managing member accounts: Admins can view, edit, or delete member accounts in the database.
 - Book issuance and returns: Admins can issue books to members and record return dates.
 
-## Key Features
-
-- Member signup and login: Users can create their own accounts and log in to access the library catalog.
-- Book search and viewing: Users can search for books by title, author, publisher, or category, and view detailed book information and availability.
-- Admin login for librarians: Librarians can log in as admins and access the admin dashboard.
-- Managing book inventory: Admins can add, edit, or delete books from the library catalog.
-- Managing book authors and publishers: Admins can add, edit, or delete authors and publishers from the database.
-- Managing member accounts: Admins can view, edit, or delete member accounts from the database.
-- Book issuance and returns: Admins can issue books to members and record return dates.
-
 ## Tech Stack
 BookStack utilizes the following technologies:
 
@@ -72,10 +62,10 @@ You will need the following tools and frameworks:
 https://github.com/shoaibulhaque/Elibrary-Management.git
 ```
 2. Setup the database:
-   - Run the SQL scripts in the `database/scripts` folder to create the necessary database and tables.
+   - Run the SQL script in the `database/` folder to create the necessary database and tables.
    - Configure the connection strings in the `appsettings.json` file to point to your SQL Server instance.
 3. Build and run the application using Visual Studio 2019.
-4. Code files are located in `WebApplication1` folder
+4. Code files are located in `WebApplication1/` folder
 
 By following these steps, you will have BookStack up and running on your local machine, allowing you to develop and test the application.
 
