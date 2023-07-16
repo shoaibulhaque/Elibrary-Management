@@ -75,6 +75,7 @@ https://github.com/shoaibulhaque/Elibrary-Management.git
    - Run the SQL scripts in the `database/scripts` folder to create the necessary database and tables.
    - Configure the connection strings in the `appsettings.json` file to point to your SQL Server instance.
 3. Build and run the application using Visual Studio 2019.
+4. Code files are located in `WebApplication1` folder
 
 By following these steps, you will have BookStack up and running on your local machine, allowing you to develop and test the application.
 
