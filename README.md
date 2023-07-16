@@ -69,7 +69,7 @@ You will need the following tools and frameworks:
 ### Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/user/bookstack.git
+https://github.com/shoaibulhaque/Elibrary-Management.git
 ```
 2. Setup the database:
    - Run the SQL scripts in the `database/scripts` folder to create the necessary database and tables.
