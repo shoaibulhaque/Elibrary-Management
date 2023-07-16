@@ -15,6 +15,15 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/shoaibulhaque/Elibrary-Management/tree/master">
+    <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white&style=flat-square" alt="GitHub">
+  </a>
+  <a href="https://github.com/shoaibulhaque/Elibrary-Management/tree/master/database">
+    <img src="https://img.shields.io/badge/See%20Database-181717?logo=github&logoColor=white&style=flat-square" alt="See Database">
+  </a>
+</p>
+
 ## BookStack
 
 BookStack is an online library management system that allows users to browse, read, and manage books in a digital catalog.
@@ -62,10 +71,9 @@ You will need the following tools and frameworks:
 ```bash
 git clone https://github.com/user/bookstack.git
 ```
-### Setup the database:
-
-1. Run the SQL scripts in the `database/scripts` folder to create the necessary database and tables.
-2. Configure the connection strings in the `appsettings.json` file to point to your SQL Server instance.
+2. Setup the database:
+   - Run the SQL scripts in the `database/scripts` folder to create the necessary database and tables.
+   - Configure the connection strings in the `appsettings.json` file to point to your SQL Server instance.
 3. Build and run the application using Visual Studio 2019.
 
 By following these steps, you will have BookStack up and running on your local machine, allowing you to develop and test the application.
