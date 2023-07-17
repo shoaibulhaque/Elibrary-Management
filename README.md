@@ -1,19 +1,4 @@
-<h1 align="center">BookStack</h1>
-
-<p align="center">
-  <a href="https://dotnet.microsoft.com/apps/aspnet">
-    <img src="https://img.shields.io/badge/ASP.NET-Core-5C2D91?logo=asp.net&logoColor=white&style=flat-square" alt="ASP.NET Core">
-  </a>
-  <a href="https://docs.microsoft.com/en-us/dotnet/csharp/">
-    <img src="https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white&style=flat-square" alt="C#">
-  </a>
-  <a href="https://getbootstrap.com/">
-    <img src="https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white&style=flat-square" alt="Bootstrap">
-  </a>
-  <a href="https://www.microsoft.com/en-us/sql-server">
-    <img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoft-sql-server&logoColor=white&style=flat-square" alt="SQL Server">
-  </a>
-</p>
+<h1 align="center"><img src="https://raw.githubusercontent.com/shoaibulhaque/Elibrary-Management/master/WebApplication1/book_inventory/PhotoRoom-20230717_205230.png" width="150"></h1> <h1 align="center">BookStack</h1> <p align="center"> <a href="https://dotnet.microsoft.com/apps/aspnet"> <img src="https://img.shields.io/badge/ASP.NET-Core-5C2D91?logo=asp.net&logoColor=white&style=flat-square" alt="ASP.NET Core"> </a> <a href="https://docs.microsoft.com/en-us/dotnet/csharp/"> <img src="https://img.shields.io/badge/C%23-239120?logo=c-sharp&logoColor=white&style=flat-square" alt="C#"> </a> <a href="https://getbootstrap.com/"> <img src="https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white&style=flat-square" alt="Bootstrap"> </a> <a href="https://www.microsoft.com/en-us/sql-server"> <img src="https://img.shields.io/badge/SQL%20Server-CC2927?logo=microsoft-sql-server&logoColor=white&style=flat-square" alt="SQL Server"> </a> </p>
 
 <p align="center">
   <a href="https://github.com/shoaibulhaque/Elibrary-Management/tree/master">
