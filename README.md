@@ -57,7 +57,7 @@ https://github.com/shoaibulhaque/Elibrary-Management.git
 3. Build and run the application using Visual Studio 2019.
 4. Code files are located in `WebApplication1/` folder
 
-By following these steps, you will have BookStack up and running on your local machine, allowing you to develop and test the application.
+**By following these steps, you will have BookStack up and running on your local machine, allowing you to develop and test the application.**
 
 
 
