@@ -24,11 +24,6 @@ BookStack is a web application developed as a university project. It provides th
 - Managing member accounts: Admins can view, edit, or delete member accounts in the database.
 - Book issuance and returns: Admins can issue books to members and record return dates.
 
-## Group Members (Group ID: 5)
-- Khansa Asif (CS-21045)
-- Syeda Hafsa Najam (CS-21046)
-- Shoaib Ul Haq (CS-21025)
-
 ## Tech Stack
 BookStack utilizes the following technologies:
 
